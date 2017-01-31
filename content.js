@@ -33,7 +33,7 @@ function highlightImages(bool) {
   else {
     // remove highlight
     images.forEach(function(image, i) {
-      image.style = '';
+      image.style.border = '';
       // remove eventlistener
       image.removeEventListener('click', getImage);
     })
