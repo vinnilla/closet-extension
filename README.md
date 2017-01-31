@@ -5,26 +5,26 @@
 * drag entire folder into the chrome://extensions page to install
 
 * manifest.json - configuration file
-** first block of data shows up on the chrome://extensions page
-** browser_action object customizes the extension icon (feel free to change the icon image ^.^)
+  * first block of data shows up on the chrome://extensions page
+  * browser_action object customizes the extension icon (feel free to change the icon image ^.^)
 
 * background.js - background script (kind of acts like the 'backend' because the data persists across refreshes and page changes)
-** any data that needs to be stored semi-permanently should be sent here
+  * any data that needs to be stored semi-permanently should be sent here
 
 * content.js - content script that can interact directly with the DOM
-** any DOM manipulation and data scraping occurs here
-** this was thrown together really sloppily -- feel free to clean it up
+  * any DOM manipulation and data scraping occurs here
+  * this was thrown together really sloppily -- feel free to clean it up
 
 * background and content 'talk' to each other via messages (think socket)
-** background sends messages via
+  * background sends messages via
 ```
 chrome.tabs.sendMessage(" id of tab you want to talk to ", " payload (can be primitive or non-primitive data) ")
 ```
-** content sends messages via
+  * content sends messages via
 ```
 chrome.runtime.sendMessage(" payload (can be primitive or non-primitive data) ")
 ```
-** message listener functions are located at the bottom of each file
+  * message listener functions are located at the bottom of each file
 
 
 #### V.0.0.0 Functionality:
