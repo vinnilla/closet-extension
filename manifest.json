@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name"            : "The Closet Companion",
+  "version"         : "0.0.0",
+  "description"     : "Add products to your closet!",
+
+  "browser_action"  : {
+    "default_icon"  : {"16" : "billy.jpg"},
+    "default_title" : "The Closet"
+  },
+
+  "author"          : "Vincent",
+
+  "background"      : {
+    "scripts"       : ["background.js"],
+    "persistent"    : true
+  },
+
+  "content_scripts" : [{
+    "matches"       : ["*://*/*"],
+    "js"            : ["content.js"]
+  }],
+
+  "permissions"     : ["activeTab"]
+}
